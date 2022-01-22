@@ -14,8 +14,11 @@ public class DuckHomepage {
     @FindBy(xpath = "//input[@name='q']")
     WebElement searchInput;
 
+    @FindBy(id = "search_button_homepage")
+    WebElement searchButton;
+
     public void search(String keyword) {
         searchInput.sendKeys(keyword);
-        searchInput.sendKeys(Keys.ENTER);
+        searchButton.click();
     }
 }

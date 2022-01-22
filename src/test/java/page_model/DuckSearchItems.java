@@ -26,10 +26,10 @@ public class DuckSearchItems {
     @FindBy(xpath = "//div[@id='links']//div[contains(@class,'result__snippet')]")
     List<WebElement>  searchDescriptions;
 
-    public Map<Integer, String[]> createMap(Map<Integer, String[]> searchResultsBing) {
+    public Map<Integer, String[]> createMap(Map<Integer, String[]> searchResultsDuck, WebDriver wd) {
         MapUtils mp = new MapUtils();
-        searchResultsBing = mp.createMap(searchResultsBing, searchItems, searchUrls, searchTitles, searchDescriptions);
-        return searchResultsBing;
+        searchResultsDuck = mp.createMap(searchResultsDuck, searchItems, searchUrls, searchTitles, searchDescriptions);
+        return searchResultsDuck;
     }
 
 }

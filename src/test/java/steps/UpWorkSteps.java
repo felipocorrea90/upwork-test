@@ -27,7 +27,6 @@ public class UpWorkSteps {
     @Given("user goes to Google website using {string}")
     public void goToGoogle(String browser) {
         wd = new DriverFactory().setupDriver(browser);
-        wd.manage().deleteAllCookies();
         wd.get("https://www.google.com/");
         searchEngine = "Google";
     }
@@ -35,7 +34,6 @@ public class UpWorkSteps {
     @Given("user goes to Duck website using {string}")
     public void goToBing(String browser) {
         wd = new DriverFactory().setupDriver(browser);
-        wd.manage().deleteAllCookies();
         wd.get("https://duckduckgo.com/");
         searchEngine = "Duck";
     }
@@ -66,7 +64,7 @@ public class UpWorkSteps {
                 break;
             case "Duck":
                 DuckSearchItems dsi = new DuckSearchItems(wd);
-                searchResultsDuck = dsi.createMap(searchResultsDuck);
+                searchResultsDuck = dsi.createMap(searchResultsDuck, wd);
                 break;
             default:
                 System.out.println("No Match");

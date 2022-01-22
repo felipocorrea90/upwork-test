@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import utils.driver.browser_manager.ChromeDriverManager;
 import utils.driver.browser_manager.FirefoxDriverManager;
 
+import java.util.concurrent.TimeUnit;
+
 public class DriverFactory {
 
     public WebDriver setupDriver(String browser) {
@@ -13,9 +15,13 @@ public class DriverFactory {
         switch (browserType) {
             case CHROME:
                 wd = new ChromeDriverManager().createDriver();
+                wd.manage().deleteAllCookies();
+                wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 break;
             case FIREFOX:
                 wd = new FirefoxDriverManager().createDriver();
+                wd.manage().deleteAllCookies();
+                wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 break;
             default:
                 System.out.println("Browser not supported");
