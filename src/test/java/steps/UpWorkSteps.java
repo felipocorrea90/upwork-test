@@ -22,6 +22,7 @@ public class UpWorkSteps {
     public static Map<Integer, String[]> searchResultsGoogle = new HashMap<Integer, String[]>();
     public static Map<Integer, String[]> searchResultsDuck = new HashMap<Integer, String[]>();
     String searchEngine;
+    String keyword;
 
     @Given("user goes to Google website using {string}")
     public void goToGoogle(String browser) {
@@ -53,6 +54,7 @@ public class UpWorkSteps {
             default:
                 System.out.println("No Match");
         }
+        this.keyword = keyword;
     }
 
     @And("saves the first 10 items")
@@ -71,8 +73,8 @@ public class UpWorkSteps {
         }
     }
 
-    @Then("at least one attribute of each item contains {string}")
-    public void atLeastOneAttributeOfEachItemContains(String keyword) {
+    @Then("at least one attribute of each item contains searched keyword")
+    public void atLeastOneAttributeOfEachItemContains() {
         MapUtils mp = new MapUtils();
         switch (searchEngine) {
             case "Google":
