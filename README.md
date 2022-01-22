@@ -1,6 +1,6 @@
-#UpWork Test - QA Engineer
+# UpWork Test - QA Engineer
 
-##Setup
+## Setup
 1. Project uses Java 8
 
 By running `java --version` on a terminal you can check your java version.
@@ -12,7 +12,7 @@ Run `mvn install` to get all the required dependencies.
 
 3. Open the project using your favorite IDE and execute the TestRunner class under `src/test/java`.
 
-##Project Structure
+## Project Structure
 
 ### Browser Factory
 The browser factory design pattern allows to easily configure and maintain the WebDriver object across the different tests. 
