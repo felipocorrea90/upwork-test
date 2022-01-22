@@ -10,7 +10,7 @@ By running `java --version` on a terminal you can check your java version.
 Project runs fine with maven version `3.6.1`. By running `mvn --version` on a terminal you can check your maven version.
 Run `mvn install` to get all the required dependencies.
 
-3. Open the project using your favorite IDE and execute the TestRunner class under `src/test/java`.
+3. Open the project using your favorite IDE and execute the TestRunner class under `src/test/java`. Another way is to run `mvn clean test` command on the project root.
 
 ## Project Structure
 
