@@ -42,7 +42,7 @@ public class MapUtils {
             }
         }
         // Assert that at least one item from searchItems Map contains keyword
-        Assert.assertTrue(noKeywordFlag < 1);
+        Assert.assertTrue("At least one search item does not have the keyword on any of its components ",noKeywordFlag < 1);
     }
 
     public void duplicatedTitles(Map<Integer, String[]> searchItems1, Map<Integer, String[]> searchItems2) {

@@ -1,14 +1,13 @@
 package utils.driver;
 
 import org.openqa.selenium.WebDriver;
-import sun.plugin.dom.exception.BrowserNotSupportedException;
 import utils.driver.browser_manager.ChromeDriverManager;
 import utils.driver.browser_manager.FirefoxDriverManager;
 
 public class DriverFactory {
 
     public WebDriver setupDriver(String browser) {
-        WebDriver wd;
+        WebDriver wd = null;
         BrowserList browserType = BrowserList.valueOf(browser.toUpperCase());
 
         switch (browserType) {
@@ -19,7 +18,7 @@ public class DriverFactory {
                 wd = new FirefoxDriverManager().createDriver();
                 break;
             default:
-                throw new BrowserNotSupportedException(browser);
+                System.out.println("Browser not supported");
         }
         return wd;
     }
